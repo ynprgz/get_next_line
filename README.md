@@ -1,4 +1,4 @@
-![alt text](image.png)
+# get_next_line
 
 ## Overview
 
