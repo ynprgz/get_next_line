@@ -121,3 +121,7 @@ Return Value:
 
 - On success: Returns 0.
 - On failure: Returns -1 and sets errno.
+
+### Local, Global and Static Variables
+
+To understand this concepts, I used this [Resources](https://www.codequoi.com/en/local-global-static-variables-in-c/#static-variables)
