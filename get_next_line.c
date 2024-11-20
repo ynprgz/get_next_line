@@ -6,9 +6,11 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:35 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/10/23 11:06:41 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/20 21:40:33 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
