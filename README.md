@@ -125,3 +125,8 @@ Return Value:
 ### Local, Global and Static Variables
 
 To understand this concepts, I used this [Resources](https://www.codequoi.com/en/local-global-static-variables-in-c/#static-variables)
+
+Summary of static in C:
+
+- In a function: Maintains the variable's value across calls to that function.
+- In global scope (outside functions): Limits the variable's scope to the file, providing internal linkage and hiding it from other files in a multi-file program.

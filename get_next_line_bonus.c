@@ -6,8 +6,13 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:21 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/11/20 21:40:52 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/21 03:19:52 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
+
+char	*get_next_line(int fd)
+{
+
+}

@@ -6,7 +6,7 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:37 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/11/21 00:04:23 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/21 05:24:16 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@
 
 # include <fcntl.h> // For open()
 # include <unistd.h> // For read(), write(), close()
+# include <stdlib.h>
 # include <stdio.h>
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
-char	*ft_strdup(const char *src);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *str, int c);
 
 #endif
