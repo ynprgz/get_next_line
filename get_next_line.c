@@ -6,7 +6,7 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:35 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/11/23 01:52:53 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/23 02:08:37 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_read_fd(int fd, char *buffer)
 	if (!temp)
 		return (NULL);
 	bytes_count = 1;
-	while (!ft_strchr(buffer, '\n') && bytes_count != 0)
+	while (!ft_strchr(buffer, '\n') && (bytes_count != 0))
 	{
 		bytes_count = read(fd, temp, BUFFER_SIZE);
 		if (bytes_count < 0)
