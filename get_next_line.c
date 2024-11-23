@@ -6,7 +6,7 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:35 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/11/22 23:44:44 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/23 01:52:53 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ char	*ft_read_fd(int fd, char *buffer)
 	char	*temp;
 	int		bytes_count;
 
-	temp = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	bytes_count = 1;
+	temp = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!temp)
 		return (NULL);
+	bytes_count = 1;
 	while (!ft_strchr(buffer, '\n') && bytes_count != 0)
 	{
 		bytes_count = read(fd, temp, BUFFER_SIZE);
-		if (bytes_count == -1)
+		if (bytes_count < 0)
 		{
 			free(buffer);
 			free(temp);
@@ -83,20 +83,19 @@ char	*ft_remainder(char *buffer)
 	size_t	j;
 
 	i = 0;
-	while (buffer[i] != '\0' && buffer[i] != '\n')
-		i++;
 	if (!buffer)
 	{
 		free(buffer);
 		return (NULL);
 	}
+	while (buffer[i] != '\0' && buffer[i] != '\n')
+		i++;
 	remainder = (char *)malloc(sizeof(char) * (ft_strlen(buffer) - i + 1));
 	if (!remainder)
 		return (NULL);
-	i += 1;
 	j = 0;
 	while (buffer[i])
-		remainder[j++] = buffer[i++];
+		remainder[j++] = buffer[++i];
 	remainder[j] = '\0';
 	free(buffer);
 	return (remainder);
@@ -110,9 +109,17 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = ft_read_fd(fd, buffer);
-	if (buffer == NULL)
+	if (!buffer)
+	{
+		free(buffer);
 		return (NULL);
+	}
 	line = ft_get_actual_line(buffer);
+	if (!line)
+	{
+		free(line);
+		return (NULL);
+	}
 	buffer = ft_remainder(buffer);
 	return (line);
 }

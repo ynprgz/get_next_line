@@ -6,7 +6,7 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:33 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/11/22 23:34:40 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/23 01:45:38 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1)
 	{
-		s1 = (char *)malloc(sizeof(char) * 1);
+		s1 = (char *)malloc(sizeof(char));
 		s1[0] = '\0';
 	}
 	if (!s1 || !s2)
