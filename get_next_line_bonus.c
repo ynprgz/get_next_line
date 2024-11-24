@@ -6,7 +6,7 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:21 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/11/23 15:25:21 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/24 18:26:52 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,12 @@ char	*ft_remainder(char *buffer)
 	return (remainder);
 }
 
+/*
+ $	The default maximum number of file descriptors varies by system.
+ $
+ $	Linux (modern distributions):
+ $	Default soft limit (ulimit -n): 1024
+*/
 char	*get_next_line(int fd)
 {
 	static char	*buffer[1024];
