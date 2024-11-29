@@ -6,7 +6,7 @@
 /*   By: yaperalt <yaperalt@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:39:35 by yaperalt          #+#    #+#             */
-/*   Updated: 2024/11/23 04:43:59 by yaperalt         ###   ########.fr       */
+/*   Updated: 2024/11/29 22:39:27 by yaperalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,11 @@ char	*get_next_line(int fd)
 	if (!buffer)
 		return (NULL);
 	line = ft_get_actual_line(buffer);
-	if (!line)
-		return (NULL);
 	buffer = ft_remainder(buffer);
+	if (!line)
+	{
+		free(buffer);
+		buffer = NULL;
+	}
 	return (line);
 }
